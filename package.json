@@ -2,6 +2,9 @@
   "name": "tinder",
   "version": "0.1.0",
   "private": true,
+  "git": "https://github.com/dharayush7/AD-Tinder.git",
+  "author": "AYUSH DHAR",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
