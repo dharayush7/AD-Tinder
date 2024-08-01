@@ -1,36 +1,191 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# AD-Tinder
+
+## Description
+This project is a clone of the popular dating application, Tinder. It allows users to swipe left or right on profiles to indicate their interest. The application integrates with Kinde for authentication and utilizes Neo4j as the graphical database to manage and store user data and interactions.
+
+## Features
+
+- **User** **Authentication**: Powered by Kinde for secure and seamless user sign-up and login.
+
+- **Swipe Functionality**: Users can swipe left to pass or right to like a profile.
+  
+- **Graph Database Integration**: Neo4j is used to handle the complex relationships and interactions between users.
+
+
+## Technologies Used
+- **Frontend & Backend** : Next JS
+- **Authentication** : Kinde
+- **Database**: Neo4j
+ 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (version 18 or higher)
+- npm or yarn or pnpm
+- A Kinda free account and configuration
+- A free neo4j instanse
+
+### Setup
+
+#### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/dharayush7/ad-sso.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### 1. Installing dependencies:
+```bash
+cd AD-Tinder
+npm install
+# or
+yarn
+# or
+pnpm i
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Kinde SetUp
+Create a free account in kinde by visiting https://kinde.com/
+#### 3. Project Creation
+create a free project in kinda by selecting. 
 
-To learn more about Next.js, take a look at the following resources:
+- Give an application name.
+- Application type: Back-end web
+- Back end SDKs: Next JS
+- Set post logout URL
+- Set call back URL
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### 4. Set Up Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Go to ```AD-Tinder/``` and create ```.env.local```
+- Go to Quick Start section in kinde
+- Find heading "Update environment vars"
+- Copy those valaue and paste it in .env file
+- .env file look like this
 
-## Deploy on Vercel
+```
+KINDE_CLIENT_ID= // client id
+KINDE_CLIENT_SECRET= // client secret
+KINDE_ISSUER_URL= // issuer url
+KINDE_SITE_URL=http://localhost:3000
+KINDE_POST_LOGOUT_REDIRECT_URL=http://localhost:3000
+KINDE_POST_LOGIN_REDIRECT_URL=http://localhost:3000/dashboard
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+## Neo4J Setup
+Go to https://neo4j.com/cloud/platform/aura-graph-database/ and create a free account. 
+- A free instance is automatically created.
+- Download the txt file and wait till the instance is ready.
+- Mean while open the txt file. The txt file look like this
+
+```
+# Wait 60 seconds before connecting using these details, or login to https://console.neo4j.io to validate the Aura Instance is available
+NEO4J_URI= // NEO4J URI
+NEO4J_USERNAME= // USERNAME
+NEO4J_PASSWORD= // PASSWORD
+AURA_INSTANCEID= // INSTANCE ID
+AURA_INSTANCENAME= // INSTANCE NAME
+```
+
+- Copy the variables and paste it in ```.env.local``` file.
+
+- Now the ```.env.local``` file look like this
+
+```
+KINDE_CLIENT_ID= // client id
+KINDE_CLIENT_SECRET= // client secret
+KINDE_ISSUER_URL= // issuer url
+KINDE_SITE_URL=http://localhost:3000
+KINDE_POST_LOGOUT_REDIRECT_URL=http://localhost:3000
+KINDE_POST_LOGIN_REDIRECT_URL=http://localhost:3000/dashboard
+
+NEO4J_URI= // NEO4J URI
+NEO4J_USERNAME= // USERNAME
+NEO4J_PASSWORD= // PASSWORD
+AURA_INSTANCEID= // INSTANCE ID
+AURA_INSTANCENAME= // INSTANCE NAME
+```
+## Initialization
+
+Go to AD-Tinder/
+
+### Start server in devolopment mode:
+
+Run this command to start the server:
+
+using npm:
+```bash
+npm start
+```
+using yarn:
+```bash
+yarn start
+```
+
+using pnpm:
+
+```bash
+pnpm run start
+```
+
+### Build project and Initialize server:
+
+
+#### To Build:
+    
+Using npm:
+ ```bash
+npm run build
+```
+Using yarn:
+
+```bash
+yarn build
+```
+Using pnpm:
+```bash
+pnpm run build
+```
+
+#### To Start: 
+
+Using npm:
+ ```bash
+npm start
+```
+Using yarn:
+
+```bash
+yarn start
+```
+Using pnpm:
+```bash
+pnpm run start
+```
+
+
+## Usage
+
+- Go to [localhost:3000](localhost:3000) and other users appear which you are not swipe left or right. If no user are display then  
+open this link in incognito tab create a new user. 
+
+- To find match go [localhost:3000/match](localhost:3000/match)
+
+- To logout go [localhost:3000/logout](localhost:3000/logout) and click logout.
+## 🔗 Links
+[portfolio](https://www.ayushdhar.com/)
+
+
+
+## License
+
+[MIT]
+
